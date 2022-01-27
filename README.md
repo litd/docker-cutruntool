@@ -32,7 +32,7 @@ python v3.6.13
 
 r-base v4.0.4
 
-samtools v1.7
+samtools v1.12
 
 scikit-learn v0.24.2
 
