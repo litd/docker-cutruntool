@@ -12,7 +12,7 @@ bowtie2 v2.3.5.1
 
 deeptools v3.5.1
 
-htslib v1.9
+htslib v1.12
 
 icu v58.2
 
@@ -26,7 +26,7 @@ parallel v20211222
 
 perl v5.26.2
 
-plotly v4.14.3
+plotly v5.1.0
 
 python v3.6.13
 

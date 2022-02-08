@@ -1,4 +1,4 @@
-# % Last Change: Wed Jan 26 08:38:36 PM 2022 CST
+# % Last Change: Mon Feb 07 06:43:15 PM 2022 CST
 # Base Image
 FROM continuumio/miniconda3:4.10.3p1
 
@@ -8,6 +8,7 @@ LABEL Author="Tiandao Li <litd99@gmail.com>"
 # Install CutRunTools2
 RUN apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
+    bc \
     jq \
     ghostscript \
     patch && \
@@ -74,6 +75,7 @@ RUN conda init bash && \
     if [ $? -eq 0 ]; then patch -p0 -N metrics.py < metrics.py.patch; fi && \
     cd $cur && \
     gcc -O2 kseq_test.c -lz -o kseq_test && \
+    conda install -y -c bioconda deeptools=3.5.1 && \
     conda deactivate && \
     chmod +x *.sh && \
     chmod +x *.py && \
